@@ -20,14 +20,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 if 'DJANGO_DEBUG_FALSE' in os.environ:
-    SECRET_KEY = ')0puajwbx@59hf51v-5(93ke*xqk7^0-4#6dk&d!_s97ype@y6'
-    DEBUG = True
-    ALLOWED_HOSTS = []
-else:
     SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
     DEBUG = True
     ALLOWED_HOSTS = [os.environ['SITENAME']]
-
+else:
+    SECRET_KEY = ')0puajwbx@59hf51v-5(93ke*xqk7^0-4#6dk&d!_s97ype@y6'
+    DEBUG = True
+    ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -51,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'superlists.urls'
+ROOT_URLCONF = 'superlists.urls'w
 
 TEMPLATES = [
     {
